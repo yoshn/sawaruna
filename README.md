@@ -10,7 +10,7 @@ You hand your Mac to an AI agent and step away. The screen has to stay unlocked 
 
 ## How it works
 
-1. Click the shield icon in the menu bar and choose **Start guarding**.
+1. Press **Control + Option + L**, or click the shield icon in the menu bar and choose **Start guarding**.
 2. Keep your hands off for 3 seconds. A chime sounds and guarding begins.
 3. If anyone touches the mouse or keyboard, the screen locks right away. Unlock with your usual password or Touch ID.
 
@@ -34,6 +34,14 @@ zsh install.command
 The installer builds the app on your Mac, puts it in `~/Applications/Sawaruna.app`, and opens it. Follow the on-screen guide to grant **Input Monitoring**. A signed and notarized download is planned (sawaruna.com, coming soon).
 
 To remove it, run `zsh uninstall.command`. Photos taken by Sawaruna stay in `~/Pictures/Sawaruna`.
+
+## Troubleshooting
+
+**Input Monitoring is on, but Sawaruna still says it is not allowed.** This happens when an older copy of Sawaruna (for example, one you built from source) left its entry in the list. Quit Sawaruna, run the command below, open Sawaruna again, and turn on the new entry.
+
+```sh
+tccutil reset ListenEvent com.sawaruna.app
+```
 
 ## Privacy
 

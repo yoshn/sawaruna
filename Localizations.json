@@ -51,7 +51,9 @@
   "Show records": "查看记录",
   "Preview the lock animation": "预览锁定动画",
   "How it works & safety": "使用方法与安全性",
-  "Quit Sawaruna": "退出 Sawaruna"
+  "Quit Sawaruna": "退出 Sawaruna",
+  "Use the ⌃⌥L shortcut": "使用快捷键 ⌃⌥L",
+  "⌃⌥L is already used by another app": "⌃⌥L 已被其他应用占用"
  },
  "zh-Hant": {
   "photo": "照片",
@@ -105,7 +107,9 @@
   "Show records": "查看記錄",
   "Preview the lock animation": "預覽鎖定動畫",
   "How it works & safety": "使用方式與安全性",
-  "Quit Sawaruna": "結束 Sawaruna"
+  "Quit Sawaruna": "結束 Sawaruna",
+  "Use the ⌃⌥L shortcut": "使用快速鍵 ⌃⌥L",
+  "⌃⌥L is already used by another app": "⌃⌥L 已被其他應用程式使用"
  },
  "ko": {
   "photo": "사진",
@@ -159,7 +163,9 @@
   "Show records": "기록 보기",
   "Preview the lock animation": "잠금 애니메이션 미리보기",
   "How it works & safety": "사용 방법 및 안전성",
-  "Quit Sawaruna": "Sawaruna 종료"
+  "Quit Sawaruna": "Sawaruna 종료",
+  "Use the ⌃⌥L shortcut": "⌃⌥L 단축키 사용",
+  "⌃⌥L is already used by another app": "⌃⌥L은(는) 다른 앱에서 이미 사용 중입니다"
  },
  "es": {
   "photo": "foto",
@@ -213,7 +219,9 @@
   "Show records": "Ver registros",
   "Preview the lock animation": "Ver la animación de bloqueo",
   "How it works & safety": "Cómo funciona y seguridad",
-  "Quit Sawaruna": "Salir de Sawaruna"
+  "Quit Sawaruna": "Salir de Sawaruna",
+  "Use the ⌃⌥L shortcut": "Usar el atajo ⌃⌥L",
+  "⌃⌥L is already used by another app": "Otra app ya usa ⌃⌥L"
  },
  "fr": {
   "photo": "photo",
@@ -267,7 +275,9 @@
   "Show records": "Voir les enregistrements",
   "Preview the lock animation": "Aperçu de l’animation de verrouillage",
   "How it works & safety": "Fonctionnement et sécurité",
-  "Quit Sawaruna": "Quitter Sawaruna"
+  "Quit Sawaruna": "Quitter Sawaruna",
+  "Use the ⌃⌥L shortcut": "Utiliser le raccourci ⌃⌥L",
+  "⌃⌥L is already used by another app": "⌃⌥L est déjà utilisé par une autre app"
  },
  "de": {
   "photo": "Foto",
@@ -321,7 +331,9 @@
   "Show records": "Aufzeichnungen anzeigen",
   "Preview the lock animation": "Sperranimation ansehen",
   "How it works & safety": "Funktionsweise & Sicherheit",
-  "Quit Sawaruna": "Sawaruna beenden"
+  "Quit Sawaruna": "Sawaruna beenden",
+  "Use the ⌃⌥L shortcut": "Tastenkürzel ⌃⌥L verwenden",
+  "⌃⌥L is already used by another app": "⌃⌥L wird bereits von einer anderen App verwendet"
  },
  "pt": {
   "photo": "foto",
@@ -375,7 +387,9 @@
   "Show records": "Ver registros",
   "Preview the lock animation": "Ver a animação de bloqueio",
   "How it works & safety": "Como funciona e segurança",
-  "Quit Sawaruna": "Encerrar o Sawaruna"
+  "Quit Sawaruna": "Encerrar o Sawaruna",
+  "Use the ⌃⌥L shortcut": "Usar o atalho ⌃⌥L",
+  "⌃⌥L is already used by another app": "⌃⌥L já está em uso por outro app"
  },
  "it": {
   "photo": "foto",
@@ -429,7 +443,9 @@
   "Show records": "Mostra registrazioni",
   "Preview the lock animation": "Anteprima dell’animazione di blocco",
   "How it works & safety": "Come funziona e sicurezza",
-  "Quit Sawaruna": "Esci da Sawaruna"
+  "Quit Sawaruna": "Esci da Sawaruna",
+  "Use the ⌃⌥L shortcut": "Usa la scorciatoia ⌃⌥L",
+  "⌃⌥L is already used by another app": "⌃⌥L è già usata da un’altra app"
  },
  "ru": {
   "photo": "фото",
@@ -483,7 +499,9 @@
   "Show records": "Показать записи",
   "Preview the lock animation": "Показать анимацию блокировки",
   "How it works & safety": "Как это работает и безопасность",
-  "Quit Sawaruna": "Завершить Sawaruna"
+  "Quit Sawaruna": "Завершить Sawaruna",
+  "Use the ⌃⌥L shortcut": "Использовать сочетание ⌃⌥L",
+  "⌃⌥L is already used by another app": "⌃⌥L уже используется другим приложением"
  },
  "hi": {
   "photo": "फ़ोटो",
@@ -537,7 +555,9 @@
   "Show records": "रिकॉर्ड दिखाएँ",
   "Preview the lock animation": "लॉक ऐनिमेशन देखें",
   "How it works & safety": "यह कैसे काम करता है और सुरक्षा",
-  "Quit Sawaruna": "Sawaruna बंद करें"
+  "Quit Sawaruna": "Sawaruna बंद करें",
+  "Use the ⌃⌥L shortcut": "⌃⌥L शॉर्टकट का उपयोग करें",
+  "⌃⌥L is already used by another app": "⌃⌥L पहले से किसी दूसरे ऐप में उपयोग हो रहा है"
  },
  "id": {
   "photo": "foto",
@@ -591,7 +611,9 @@
   "Show records": "Lihat catatan",
   "Preview the lock animation": "Lihat animasi kunci",
   "How it works & safety": "Cara kerja & keamanan",
-  "Quit Sawaruna": "Keluar dari Sawaruna"
+  "Quit Sawaruna": "Keluar dari Sawaruna",
+  "Use the ⌃⌥L shortcut": "Gunakan pintasan ⌃⌥L",
+  "⌃⌥L is already used by another app": "⌃⌥L sudah dipakai oleh app lain"
  },
  "tr": {
   "photo": "foto",
@@ -645,7 +667,9 @@
   "Show records": "Kayıtları göster",
   "Preview the lock animation": "Kilit animasyonunu önizle",
   "How it works & safety": "Nasıl çalışır ve güvenlik",
-  "Quit Sawaruna": "Sawaruna’dan Çık"
+  "Quit Sawaruna": "Sawaruna’dan Çık",
+  "Use the ⌃⌥L shortcut": "⌃⌥L kısayolunu kullan",
+  "⌃⌥L is already used by another app": "⌃⌥L başka bir uygulama tarafından kullanılıyor"
  },
  "nl": {
   "photo": "foto",
@@ -699,7 +723,9 @@
   "Show records": "Toon gegevens",
   "Preview the lock animation": "Bekijk de vergrendelanimatie",
   "How it works & safety": "Hoe het werkt en veiligheid",
-  "Quit Sawaruna": "Stop Sawaruna"
+  "Quit Sawaruna": "Stop Sawaruna",
+  "Use the ⌃⌥L shortcut": "Sneltoets ⌃⌥L gebruiken",
+  "⌃⌥L is already used by another app": "⌃⌥L wordt al door een andere app gebruikt"
  },
  "pl": {
   "photo": "zdjęcie",
@@ -753,7 +779,9 @@
   "Show records": "Pokaż zapisy",
   "Preview the lock animation": "Podgląd animacji blokady",
   "How it works & safety": "Jak to działa i bezpieczeństwo",
-  "Quit Sawaruna": "Zakończ Sawaruna"
+  "Quit Sawaruna": "Zakończ Sawaruna",
+  "Use the ⌃⌥L shortcut": "Używaj skrótu ⌃⌥L",
+  "⌃⌥L is already used by another app": "Skrót ⌃⌥L jest już używany przez inną aplikację"
  },
  "vi": {
   "photo": "ảnh",
@@ -807,7 +835,9 @@
   "Show records": "Xem bản ghi",
   "Preview the lock animation": "Xem trước hiệu ứng khóa",
   "How it works & safety": "Cách hoạt động & an toàn",
-  "Quit Sawaruna": "Thoát Sawaruna"
+  "Quit Sawaruna": "Thoát Sawaruna",
+  "Use the ⌃⌥L shortcut": "Dùng phím tắt ⌃⌥L",
+  "⌃⌥L is already used by another app": "⌃⌥L đang được một ứng dụng khác sử dụng"
  },
  "th": {
   "photo": "รูป",
@@ -861,7 +891,9 @@
   "Show records": "ดูบันทึก",
   "Preview the lock animation": "ดูตัวอย่างแอนิเมชันล็อค",
   "How it works & safety": "วิธีการทำงานและความปลอดภัย",
-  "Quit Sawaruna": "ออกจาก Sawaruna"
+  "Quit Sawaruna": "ออกจาก Sawaruna",
+  "Use the ⌃⌥L shortcut": "ใช้ปุ่มลัด ⌃⌥L",
+  "⌃⌥L is already used by another app": "⌃⌥L ถูกใช้โดยแอปอื่นอยู่แล้ว"
  },
  "sv": {
   "photo": "foto",
@@ -915,7 +947,9 @@
   "Show records": "Visa poster",
   "Preview the lock animation": "Förhandsvisa låsanimeringen",
   "How it works & safety": "Så fungerar det och säkerhet",
-  "Quit Sawaruna": "Avsluta Sawaruna"
+  "Quit Sawaruna": "Avsluta Sawaruna",
+  "Use the ⌃⌥L shortcut": "Använd kortkommandot ⌃⌥L",
+  "⌃⌥L is already used by another app": "⌃⌥L används redan av en annan app"
  },
  "uk": {
   "photo": "фото",
@@ -969,7 +1003,9 @@
   "Show records": "Показати записи",
   "Preview the lock animation": "Показати анімацію блокування",
   "How it works & safety": "Як це працює та безпека",
-  "Quit Sawaruna": "Завершити Sawaruna"
+  "Quit Sawaruna": "Завершити Sawaruna",
+  "Use the ⌃⌥L shortcut": "Використовувати сполучення ⌃⌥L",
+  "⌃⌥L is already used by another app": "⌃⌥L уже використовує інша програма"
  },
  "da": {
   "photo": "foto",
@@ -1023,7 +1059,9 @@
   "Show records": "Vis registreringer",
   "Preview the lock animation": "Se låseanimationen",
   "How it works & safety": "Sådan virker det og sikkerhed",
-  "Quit Sawaruna": "Slut Sawaruna"
+  "Quit Sawaruna": "Slut Sawaruna",
+  "Use the ⌃⌥L shortcut": "Brug genvejen ⌃⌥L",
+  "⌃⌥L is already used by another app": "⌃⌥L bruges allerede af en anden app"
  },
  "nb": {
   "photo": "bilde",
@@ -1077,7 +1115,9 @@
   "Show records": "Vis logg",
   "Preview the lock animation": "Se låseanimasjonen",
   "How it works & safety": "Slik virker det og sikkerhet",
-  "Quit Sawaruna": "Avslutt Sawaruna"
+  "Quit Sawaruna": "Avslutt Sawaruna",
+  "Use the ⌃⌥L shortcut": "Bruk snarveien ⌃⌥L",
+  "⌃⌥L is already used by another app": "⌃⌥L brukes allerede av en annen app"
  },
  "fi": {
   "photo": "kuva",
@@ -1131,7 +1171,9 @@
   "Show records": "Näytä tallenteet",
   "Preview the lock animation": "Esikatsele lukitusanimaatio",
   "How it works & safety": "Toiminta ja turvallisuus",
-  "Quit Sawaruna": "Lopeta Sawaruna"
+  "Quit Sawaruna": "Lopeta Sawaruna",
+  "Use the ⌃⌥L shortcut": "Käytä pikanäppäintä ⌃⌥L",
+  "⌃⌥L is already used by another app": "⌃⌥L on jo toisen apin käytössä"
  },
  "is": {
   "photo": "mynd",
@@ -1185,7 +1227,9 @@
   "Show records": "Sýna skrár",
   "Preview the lock animation": "Forskoða læsingarhreyfimyndina",
   "How it works & safety": "Hvernig þetta virkar og öryggi",
-  "Quit Sawaruna": "Hætta í Sawaruna"
+  "Quit Sawaruna": "Hætta í Sawaruna",
+  "Use the ⌃⌥L shortcut": "Nota flýtileiðina ⌃⌥L",
+  "⌃⌥L is already used by another app": "⌃⌥L er þegar í notkun í öðru forriti"
  },
  "he": {
   "photo": "תמונה",
@@ -1239,6 +1283,8 @@
   "Show records": "הצגת רשומות",
   "Preview the lock animation": "תצוגה מקדימה של אנימציית הנעילה",
   "How it works & safety": "איך זה עובד ואבטחה",
-  "Quit Sawaruna": "יציאה מ-Sawaruna"
+  "Quit Sawaruna": "יציאה מ-Sawaruna",
+  "Use the ⌃⌥L shortcut": "שימוש בקיצור ⌃⌥L",
+  "⌃⌥L is already used by another app": "⌃⌥L כבר בשימוש באפליקציה אחרת"
  }
 }

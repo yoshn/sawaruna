@@ -22,6 +22,7 @@ import AVFoundation
 import CoreImage
 import IOKit.pwr_mgt
 import IOKit.hid
+import Carbon.HIToolbox
 
 // Sawaruna
 // AIにMacを任せて席を離れるための見張り番。人がマウスやキーボードに触ると、すぐにロックする。
@@ -153,6 +154,34 @@ var onboardingVisible: () -> Bool = { false }
 let defaults = UserDefaults.standard
 func photoEnabled() -> Bool { defaults.bool(forKey: "photoEnabled") }
 func setPhotoEnabled(_ on: Bool) { defaults.set(on, forKey: "photoEnabled") }
+
+// ===== ショートカットキー（control + option + L で見張りを始める） =====
+// RegisterEventHotKey は「この組み合わせが押された」ことだけを知らせる仕組みで、追加の許可はいらない
+func hotkeyEnabled() -> Bool { !defaults.bool(forKey: "hotkeyOff") }
+func setHotkeyEnabled(_ on: Bool) { defaults.set(!on, forKey: "hotkeyOff"); registerHotKey() }
+var hotKeyRef: EventHotKeyRef?
+var hotKeyHandlerInstalled = false
+var hotKeyAvailable = true    // ほかのアプリが同じ組み合わせを使っていると false
+var onHotKey: () -> Void = {}
+
+func registerHotKey() {
+    if let r = hotKeyRef { UnregisterEventHotKey(r); hotKeyRef = nil }
+    hotKeyAvailable = true
+    guard hotkeyEnabled() else { return }
+    if !hotKeyHandlerInstalled {
+        var spec = EventTypeSpec(eventClass: OSType(kEventClassKeyboard), eventKind: UInt32(kEventHotKeyPressed))
+        InstallEventHandler(GetApplicationEventTarget(), { _, _, _ -> OSStatus in
+            DispatchQueue.main.async { onHotKey() }
+            return noErr
+        }, 1, &spec, nil, nil)
+        hotKeyHandlerInstalled = true
+    }
+    let id = EventHotKeyID(signature: OSType(0x5357_4B59), id: 1)   // "SWKY"
+    let status = RegisterEventHotKey(UInt32(kVK_ANSI_L), UInt32(controlKey | optionKey), id,
+                                     GetApplicationEventTarget(), 0, &hotKeyRef)
+    if status != noErr { hotKeyRef = nil; hotKeyAvailable = false }
+    log("hotkey " + (status == noErr ? "on" : "unavailable \(status)"))
+}
 func onboardingDone() -> Bool { defaults.bool(forKey: "onboardingDone") }
 
 let listenSettingsURL = "x-apple.systempreferences:com.apple.preference.security?Privacy_ListenEvent"
@@ -1462,6 +1491,10 @@ final class StatusMenu: NSObject, NSMenuDelegate {
             add(L("見張りを始める", "Start guarding"), #selector(toggleWatch))
         }
         menu.addItem(NSMenuItem.separator())
+        add(L("ショートカット ⌃⌥L を使う", "Use the ⌃⌥L shortcut"), #selector(toggleHotkey), checked: hotkeyEnabled())
+        if hotkeyEnabled() && !hotKeyAvailable {
+            add(L("⌃⌥L はほかのアプリが使っています", "⌃⌥L is already used by another app"), nil)
+        }
         add(L("触った人の写真を残す", "Keep a photo of who touched it"), #selector(togglePhoto), checked: photoEnabled())
         add(L("記録を見る", "Show records"), #selector(openRecords))
         add(L("ロックの演出を見る", "Preview the lock animation"), #selector(preview), enabled: watchState == .idle)
@@ -1476,6 +1509,8 @@ final class StatusMenu: NSObject, NSMenuDelegate {
     @objc func toggleWatch() {
         if watchState == .arming || watchState == .armed { cancelWatch() } else { startWatch() }
     }
+
+    @objc func toggleHotkey() { setHotkeyEnabled(!hotkeyEnabled()) }
 
     @objc func togglePhoto() {
         if photoEnabled() {
@@ -1531,6 +1566,12 @@ let statusMenu = StatusMenu()
 onStateChange = { statusMenu.refresh() }
 openOnboarding = { s in onboarding.show(at: s ?? onboarding.step) }
 onboardingVisible = { onboarding.window?.isVisible == true }
+// ⌃⌥L：待機中なら見張りを始める（見張り中に押した場合は「人が触った」として扱われる）
+onHotKey = {
+    guard watchState == .idle else { return }
+    if onboardingVisible() { openOnboarding(nil) } else { startWatch() }
+}
+registerHotKey()
 
 // 画面がロックされたとき
 DistributedNotificationCenter.default().addObserver(forName: NSNotification.Name("com.apple.screenIsLocked"),
