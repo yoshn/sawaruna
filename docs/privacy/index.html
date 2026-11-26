@@ -2,9 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<script>
+/* Google Analytics 4 with Consent Mode v2. No ads. In Europe, nothing is stored until the visitor agrees. */
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',region:['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH']});
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'granted'});
+(function(){try{var c=localStorage.getItem('sw-consent');if(c==='granted'||c==='denied')gtag('consent','update',{analytics_storage:c});}catch(e){}})();
+gtag('js',new Date());gtag('config','G-HM2ZD88JFT');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HM2ZD88JFT"></script>
+
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Privacy Policy · Sawaruna</title>
-<meta name="description" content="Sawaruna does not collect, send, or share any personal data.">
+<meta name="description" content="The Sawaruna app does not collect, send, or share any personal data.">
 <link rel="canonical" href="https://sawaruna.com/privacy/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
 <style>
@@ -12,14 +22,25 @@
 *{box-sizing:border-box}
 body{margin:0;background:var(--ink);color:var(--fg);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI","Hiragino Sans","Noto Sans JP",sans-serif;font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased}
 main{max-width:760px;margin:0 auto;padding:40px 20px 80px}
-a{color:var(--cyan)}
+a{color:var(--cyan);overflow-wrap:anywhere}
 .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;font-size:15px}
 .top a{text-decoration:none}
 h1{font-size:clamp(28px,6vw,38px);line-height:1.2;margin:0 0 8px}
 h2{font-size:26px;margin:48px 0 12px;padding-top:24px;border-top:1px solid var(--line)}
 h3{font-size:20px;margin:32px 0 8px}
-p,li{color:var(--fg)} ul{padding-left:1.2em} li{margin:8px 0}
+ul{padding-left:1.2em} li{margin:8px 0}
 code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;background:#151A31;border:1px solid var(--line);border-radius:6px;padding:1px 6px;overflow-wrap:anywhere}
+.optout{background:#151A31;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:16px 0}
+.optout p{margin:0 0 10px;color:var(--muted);font-size:15px}
+.optout button{font:inherit;font-size:15px;font-weight:600;border-radius:10px;padding:8px 14px;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--fg);margin:4px 4px 0 0}
+</style>
+<style>
+.sw-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:50;max-width:560px;margin:0 auto;background:#151A31;border:1px solid #262C4A;border-radius:14px;padding:14px 16px;display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;box-shadow:0 12px 40px rgba(0,0,0,.45);font-size:14px;line-height:1.5;color:#E9ECF7}
+.sw-consent p{margin:0;flex:1 1 260px}
+.sw-consent a{color:#4FD1FF}
+.sw-consent .b{display:flex;gap:8px}
+.sw-consent button{font:inherit;font-weight:600;border-radius:10px;padding:8px 14px;cursor:pointer;border:1px solid #262C4A;background:transparent;color:#E9ECF7}
+.sw-consent button.y{background:linear-gradient(90deg,#4FD1FF,#8C5CF5);border:0;color:#0E1122}
 </style>
 </head>
 <body><main>
@@ -27,7 +48,7 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;background
 <h1>Privacy Policy / プライバシーポリシー</h1>
 <p>Last updated: November 2026 / 最終更新：2026年11月</p>
 <h2 id="en">English</h2>
-<p>Sawaruna does not collect, send, or share any personal data.</p>
+<p>The Sawaruna app does not collect, send, or share any personal data.</p>
 <h3>Mac version</h3>
 <ul>
 <li><strong>No internet connection.</strong> The app contains no networking code. Nothing leaves your Mac.</li>
@@ -45,9 +66,18 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;background
 <li><strong>No camera.</strong> The Windows version does not take photos.</li>
 <li><strong>Settings</strong> (whether the Ctrl+Alt+L shortcut is on, and whether the first-run guide was shown) are stored in the Windows registry for your user account (<code>HKEY_CURRENT_USER\Software\Sawaruna</code>). They contain no personal data.</li>
 </ul>
+<h3 id="website">Website (sawaruna.com)</h3>
+<p>The app itself never connects to the internet. The website sawaruna.com uses Google Analytics 4 to count visits and app downloads, so we can see how people find Sawaruna.</p>
+<ul>
+<li>Google Analytics uses cookies and collects data such as pages viewed, approximate location, device and browser. It does not give us your name or email address. We do not use it for ads.</li>
+<li>Visitors in Europe are asked first. Nothing is stored until you choose "Allow".</li>
+<li>You can turn it off at any time on the privacy page at <a href="https://sawaruna.com/privacy/">https://sawaruna.com/privacy/</a>, or with Google's opt-out add-on: <a href="https://tools.google.com/dlpage/gaoptout">https://tools.google.com/dlpage/gaoptout</a></li>
+<li>How Google uses this data: <a href="https://policies.google.com/technologies/partner-sites">https://policies.google.com/technologies/partner-sites</a></li>
+</ul>
+<div class="optout" data-lang="en"><p class="state"></p><button type="button" data-v="denied">Turn analytics off</button> <button type="button" data-v="granted">Allow analytics</button></div>
 <p>Questions: open an issue at <a href="https://github.com/yoshn/sawaruna/issues">https://github.com/yoshn/sawaruna/issues</a></p>
-<h2 id="ja" lang="ja">日本語</h2>
-<p>Sawaruna は、個人情報を集めることも、送ることも、共有することもしません。</p>
+<div lang="ja"><h2 id="ja" lang="ja">日本語</h2>
+<p>Sawaruna のアプリは、個人情報を集めることも、送ることも、共有することもしません。</p>
 <h3>Mac 版</h3>
 <ul>
 <li><strong>インターネットに接続しません。</strong> 通信するコードを含んでいません。Macの外には何も出ません。</li>
@@ -65,5 +95,47 @@ code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;background
 <li><strong>カメラは使いません。</strong> Windows 版は写真を撮りません。</li>
 <li><strong>設定</strong>（Ctrl+Alt+L のオン・オフと、最初の案内を表示したかどうか）は、ユーザーごとの Windows のレジストリ（<code>HKEY_CURRENT_USER\Software\Sawaruna</code>）に保存します。個人情報は含みません。</li>
 </ul>
-<p>お問い合わせ：<a href="https://github.com/yoshn/sawaruna/issues">https://github.com/yoshn/sawaruna/issues</a></p>
-</main></body></html>
+<h3 id="website-ja">ウェブサイト（sawaruna.com）</h3>
+<p>アプリ自体はインターネットに接続しません。ウェブサイト sawaruna.com では、Sawaruna がどのように見つけられているかを知るために、Google アナリティクス 4 で訪問数とアプリのダウンロード数を数えています。</p>
+<ul>
+<li>Google アナリティクスは Cookie を使い、見たページ、おおよその地域、端末やブラウザの種類などを集めます。名前やメールアドレスはわかりません。広告には使いません。</li>
+<li>ヨーロッパからの訪問者には先に確認します。「許可する」を選ぶまで何も保存しません。</li>
+<li>いつでも <a href="https://sawaruna.com/privacy/">https://sawaruna.com/privacy/</a> のページで止められます。Google のオプトアウト アドオン（<a href="https://tools.google.com/dlpage/gaoptout">https://tools.google.com/dlpage/gaoptout</a>）でも止められます。</li>
+<li>Google によるデータの使い方：<a href="https://policies.google.com/technologies/partner-sites?hl=ja">https://policies.google.com/technologies/partner-sites?hl=ja</a></li>
+</ul>
+<div class="optout" data-lang="ja"><p class="state"></p><button type="button" data-v="denied">解析をオフにする</button> <button type="button" data-v="granted">解析を許可する</button></div>
+<p>お問い合わせ：<a href="https://github.com/yoshn/sawaruna/issues">https://github.com/yoshn/sawaruna/issues</a></p></div>
+</main>
+<script>
+(function(){
+  var T={en:{on:'Analytics is on for this browser.',off:'Analytics is off for this browser.',def:'You have not chosen yet.'},ja:{on:'このブラウザでは解析がオンです。',off:'このブラウザでは解析がオフです。',def:'まだ選んでいません。'}};
+  function render(){var c=null;try{c=localStorage.getItem('sw-consent');}catch(e){}
+    document.querySelectorAll('.optout').forEach(function(b){var t=T[b.dataset.lang];b.querySelector('.state').textContent=c==='granted'?t.on:c==='denied'?t.off:t.def;});}
+  document.querySelectorAll('.optout button').forEach(function(btn){btn.onclick=function(){if(window.swSetConsent)window.swSetConsent(btn.dataset.v);render();var bar=document.querySelector('.sw-consent');if(bar)bar.remove();};});
+  render();
+})();
+</script>
+<script>
+(function(){
+  function save(v){try{localStorage.setItem('sw-consent',v);}catch(e){}gtag('consent','update',{analytics_storage:v});}
+  window.swSetConsent=save;
+  /* Ask only visitors in Europe (where consent is required); others can opt out on the privacy page. */
+  var stored=null;try{stored=localStorage.getItem('sw-consent');}catch(e){}
+  var tz='';try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';}catch(e){}
+  var europe=/^Europe\//.test(tz)||tz==='Atlantic/Reykjavik'||tz==='Atlantic/Canary'||tz==='Atlantic/Madeira'||tz==='Atlantic/Azores';
+  if(!stored&&europe){
+    var d=document.createElement('div');d.className='sw-consent';d.setAttribute('role','dialog');d.setAttribute('aria-label','Analytics');
+    d.innerHTML='<p>We use Google Analytics to see how people find Sawaruna. No ads. <a href="/privacy/#website">Details</a></p><div class="b"><button type="button" class="n">Decline</button><button type="button" class="y">Allow</button></div>';
+    d.querySelector('.y').onclick=function(){save('granted');d.remove();};
+    d.querySelector('.n').onclick=function(){save('denied');d.remove();};
+    document.body.appendChild(d);
+  }
+  /* Count app downloads */
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.href;
+    if(/\/releases\/download\//.test(h)){gtag('event','download_app',{platform:/\.dmg$/.test(h)?'mac':'windows',file_name:h.split('/').pop(),link_location:a.closest('section')&&a.closest('section').id||''});}
+    else if(/github\.com\/yoshn\/sawaruna/.test(h)){gtag('event','click_github',{link_url:h});}
+  });
+})();
+</script>
+</body></html>
