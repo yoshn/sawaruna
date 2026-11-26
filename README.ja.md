@@ -31,7 +31,7 @@ cd sawaruna
 zsh install.command
 ```
 
-インストーラーがあなたのMacの上でアプリを作り、`~/Applications/Sawaruna.app` に入れて開きます。画面の案内に沿って「入力監視」を許可してください。署名・公証済みのダウンロード版は、sawaruna.com で公開する予定です。
+インストーラーがあなたのMacの上でアプリを作り、`~/Applications/Sawaruna.app` に入れて開きます。画面の案内に沿って「入力監視」を許可してください。署名・公証済みのアプリは [sawaruna.com](https://sawaruna.com/ja/) からもダウンロードできます。
 
 削除するときは `zsh uninstall.command` を実行します。Sawaruna が撮った写真は「ピクチャ/Sawaruna」に残ります。
 
@@ -52,9 +52,21 @@ tccutil reset ListenEvent com.sawaruna.app
 
 詳しくは [PRIVACY.md](PRIVACY.md) と [SECURITY.ja.md](SECURITY.ja.md) を見てください。Sawaruna で防げないことも書いています。
 
+## Windows 版（ベータ）
+
+Windows 10・11 版をベータ版として公開しています。[windows/README.md](windows/README.md) と [リリース](https://github.com/yoshn/sawaruna/releases) をご覧ください。
+
 ## 対応言語
 
 25言語です：日本語、英語、韓国語、中国語（簡体字・繁体字）、スペイン語、フランス語、ドイツ語、ポルトガル語、イタリア語、ロシア語、ヒンディー語、インドネシア語、トルコ語、オランダ語、ポーランド語、ベトナム語、タイ語、スウェーデン語、ウクライナ語、デンマーク語、ノルウェー語、フィンランド語、アイスランド語、ヘブライ語。ヘブライ語は右から左の表示に対応しています。
+
+## コード署名のルール
+
+- **Mac 版：** Apple の Developer ID 証明書で署名し、Apple の公証を受けています。このリポジトリのソースから [release.command](release.command) で作っています。
+- **Windows 版：** このリポジトリのソースから [GitHub Actions](.github/workflows/windows.yml) だけで作ります。いまはまだ署名がありません。オープンソース向けの無料の署名制度（[SignPath Foundation](https://signpath.org)）で署名する予定です。
+- **役割：** コミットとレビュー：[中村ヨシキ](https://github.com/yoshn)。署名の承認：[中村ヨシキ](https://github.com/yoshn)。
+- 署名の依頼は、毎回承認者が手で承認します。ソースを変更できるアカウントと署名を承認できるアカウントは、多要素認証を使います。
+- **プライバシー：** Sawaruna はどんな情報もほかのネットワーク上のシステムに送りません。[PRIVACY.md](PRIVACY.md) をご覧ください。
 
 ## ライセンス
 

@@ -31,7 +31,7 @@ cd sawaruna
 zsh install.command
 ```
 
-The installer builds the app on your Mac, puts it in `~/Applications/Sawaruna.app`, and opens it. Follow the on-screen guide to grant **Input Monitoring**. A signed and notarized download is planned (sawaruna.com, coming soon).
+The installer builds the app on your Mac, puts it in `~/Applications/Sawaruna.app`, and opens it. Follow the on-screen guide to grant **Input Monitoring**. You can also download the signed and notarized app from [sawaruna.com](https://sawaruna.com).
 
 To remove it, run `zsh uninstall.command`. Photos taken by Sawaruna stay in `~/Pictures/Sawaruna`.
 
@@ -52,9 +52,21 @@ tccutil reset ListenEvent com.sawaruna.app
 
 See [PRIVACY.md](PRIVACY.md) and [SECURITY.md](SECURITY.md), including what Sawaruna cannot protect against.
 
+## Windows (beta)
+
+A Windows 10 and 11 version is in beta. See [windows/README.md](windows/README.md) and the [releases](https://github.com/yoshn/sawaruna/releases).
+
 ## Languages
 
 25 languages: English, Japanese, Korean, Chinese (Simplified and Traditional), Spanish, French, German, Portuguese, Italian, Russian, Hindi, Indonesian, Turkish, Dutch, Polish, Vietnamese, Thai, Swedish, Ukrainian, Danish, Norwegian, Finnish, Icelandic, and Hebrew. Hebrew is shown right to left.
+
+## Code signing policy
+
+- **Mac:** release builds are signed with an Apple Developer ID certificate and notarized by Apple. They are built from the source in this repository with [release.command](release.command).
+- **Windows:** release builds are made only by [GitHub Actions](.github/workflows/windows.yml) from the source in this repository. They are not code-signed yet. We plan to sign them through the free code signing program of the [SignPath Foundation](https://signpath.org) for open-source projects.
+- **Team roles:** committers and reviewers: [Yoshiki Nakamura](https://github.com/yoshn). Approvers: [Yoshiki Nakamura](https://github.com/yoshn).
+- Every signing request is approved by hand by an approver. Accounts that can change the source or approve signing use multi-factor authentication.
+- **Privacy:** Sawaruna does not send any information to other networked systems. See [PRIVACY.md](PRIVACY.md).
 
 ## License
 
