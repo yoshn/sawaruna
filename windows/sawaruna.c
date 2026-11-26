@@ -39,8 +39,9 @@
 #include <wtsapi32.h>
 #include <stdio.h>
 #include <wchar.h>
+#include "l10n.h"   // translations for 23 more languages (generated from l10n/windows_translations.json)
 
-#define APP_VERSION L"0.1"
+#define APP_VERSION L"0.2"
 
 #define IDI_APP       1
 #define IDI_IDLE      2
@@ -91,8 +92,58 @@ static DWORD g_hookThreadId;
 static HANDLE g_hookReady;
 static volatile LONG g_hookOk;
 
-// ---------- text (Japanese or English) ----------
-#define T(ja, en) (g_ja ? (ja) : (en))
+// ---------- text ----------
+// Japanese and English are written here; other languages are looked up by the English text.
+static const struct L10nLang *g_lang;
+static BOOL g_rtl;
+static const wchar_t *tr(const wchar_t *en) {
+    if (!g_lang) return en;
+    for (int i = 0; i < g_lang->count; i++)
+        if (wcscmp(g_lang->pairs[i][0], en) == 0) return g_lang->pairs[i][1];
+    return en;
+}
+#define T(ja, en) (g_ja ? (ja) : tr(en))
+
+static const wchar_t *lang_code(LANGID id) {
+    switch (PRIMARYLANGID(id)) {
+    case LANG_CHINESE: {
+        WORD sub = SUBLANGID(id);
+        return (id == 0x7C04 || sub == SUBLANG_CHINESE_TRADITIONAL || sub == SUBLANG_CHINESE_HONGKONG || sub == SUBLANG_CHINESE_MACAU) ? L"zh-Hant" : L"zh-Hans";
+    }
+    case LANG_KOREAN: return L"ko";
+    case LANG_SPANISH: return L"es";
+    case LANG_FRENCH: return L"fr";
+    case LANG_GERMAN: return L"de";
+    case LANG_PORTUGUESE: return L"pt";
+    case LANG_ITALIAN: return L"it";
+    case LANG_RUSSIAN: return L"ru";
+    case LANG_HINDI: return L"hi";
+    case LANG_INDONESIAN: return L"id";
+    case LANG_TURKISH: return L"tr";
+    case LANG_DUTCH: return L"nl";
+    case LANG_POLISH: return L"pl";
+    case LANG_VIETNAMESE: return L"vi";
+    case LANG_THAI: return L"th";
+    case LANG_SWEDISH: return L"sv";
+    case LANG_UKRAINIAN: return L"uk";
+    case LANG_DANISH: return L"da";
+    case LANG_NORWEGIAN: return L"nb";
+    case LANG_FINNISH: return L"fi";
+    case LANG_ICELANDIC: return L"is";
+    case LANG_HEBREW: return L"he";
+    default: return NULL;
+    }
+}
+static void pick_language(void) {
+    LANGID id = GetUserDefaultUILanguage();
+    g_ja = PRIMARYLANGID(id) == LANG_JAPANESE;
+    const wchar_t *code = lang_code(id);
+    if (!code) return;
+    for (int i = 0; i < L10N_LANG_COUNT; i++)
+        if (wcscmp(L10N_LANGS[i].code, code) == 0) g_lang = &L10N_LANGS[i];
+    g_rtl = g_lang && wcscmp(code, L"he") == 0;
+}
+static UINT mb_dir(void) { return g_rtl ? (MB_RTLREADING | MB_RIGHT) : 0; }
 
 // ---------- settings (HKCU\Software\Sawaruna) ----------
 static DWORD reg_get(const wchar_t *name, DWORD def) {
@@ -295,7 +346,7 @@ static void start_guard(void) {
         MessageBoxW(NULL,
             T(L"見張りを始められませんでした。セキュリティソフトがマウスとキーボードの見張りを止めている可能性があります。PC を再起動してから、もう一度お試しください。",
               L"Could not start guarding. Security software may be blocking Sawaruna from watching the mouse and keyboard. Restart the PC and try again."),
-            L"Sawaruna", MB_ICONWARNING | MB_OK | MB_TOPMOST);
+            L"Sawaruna", MB_ICONWARNING | MB_OK | MB_TOPMOST | mb_dir());
         return;
     }
     // Keep the PC awake for the AI agent while guarding (the display may still turn off)
@@ -319,7 +370,7 @@ static void lock_failed(void) {
     MessageBoxW(NULL,
         T(L"この PC をロックできなかったため、見張りを終了しました。\nWindows ロゴ キー + L でロックしてください。それでもロックできない場合は、管理者の設定でロックが無効になっている可能性があります。",
           L"Sawaruna could not lock this PC, so guarding has stopped.\nPress Windows logo key + L to lock it. If that does not work either, locking may be turned off by your administrator."),
-        L"Sawaruna", MB_ICONWARNING | MB_OK | MB_TOPMOST | MB_SETFOREGROUND);
+        L"Sawaruna", MB_ICONWARNING | MB_OK | MB_TOPMOST | MB_SETFOREGROUND | mb_dir());
 }
 
 static void lock_now(void) {
@@ -352,7 +403,13 @@ static void show_menu(void) {
         AppendMenuW(m, MF_STRING | MF_GRAYED, 0, T(L"このキーボード配列では Ctrl+Alt+L が文字の入力に使われるため、オフにしています",
                                                     L"Off because this keyboard layout uses Ctrl+Alt+L to type a character"));
     AppendMenuW(m, MF_SEPARATOR, 0, NULL);
-    AppendMenuW(m, MF_STRING, CMD_GUIDE, T(L"使い方と安全性", L"How it works & safety"));
+    {   /* '&' marks a mnemonic in menus, so double it to show it literally */
+        const wchar_t *g = T(L"使い方と安全性", L"How it works & safety");
+        wchar_t gbuf[128]; int j = 0;
+        for (int i = 0; g[i] && j < 125; i++) { if (g[i] == L'&') gbuf[j++] = L'&'; gbuf[j++] = g[i]; }
+        gbuf[j] = 0;
+        AppendMenuW(m, MF_STRING, CMD_GUIDE, gbuf);
+    }
     AppendMenuW(m, MF_STRING | MF_GRAYED, 0, L"Sawaruna for Windows " APP_VERSION);
     AppendMenuW(m, MF_SEPARATOR, 0, NULL);
     AppendMenuW(m, MF_STRING, CMD_QUIT, T(L"Sawaruna を終了", L"Quit Sawaruna"));
@@ -360,7 +417,7 @@ static void show_menu(void) {
     POINT p;
     GetCursorPos(&p);
     SetForegroundWindow(g_hwnd);
-    TrackPopupMenu(m, TPM_RIGHTBUTTON | TPM_BOTTOMALIGN, p.x, p.y, 0, g_hwnd, NULL);
+    TrackPopupMenu(m, TPM_RIGHTBUTTON | TPM_BOTTOMALIGN | (g_rtl ? TPM_LAYOUTRTL : 0), p.x, p.y, 0, g_hwnd, NULL);
     PostMessageW(g_hwnd, WM_NULL, 0, 0);
     DestroyMenu(m);
 }
@@ -386,7 +443,7 @@ static void first_run(void) {
           L"3. If anyone touches the mouse or keyboard, the PC locks right away. Sign in as usual with your password or PIN. Guarding ends when the PC locks.\n\n"
           L"Input sent by software, such as an AI agent, is ignored. Keystrokes are never read or recorded.\n"
           L"If another app uses Ctrl+Alt+L, you can turn the shortcut off from the menu."));
-    MessageBoxW(NULL, text, L"Sawaruna", MB_ICONINFORMATION | MB_OK | MB_TOPMOST);
+    MessageBoxW(NULL, text, L"Sawaruna", MB_ICONINFORMATION | MB_OK | MB_TOPMOST | mb_dir());
 }
 
 static void wts_register(void) {
@@ -475,7 +532,7 @@ static LRESULT CALLBACK wnd_proc(HWND h, UINT msg, WPARAM wp, LPARAM lp) {
 int WINAPI wWinMain(HINSTANCE inst, HINSTANCE prev, PWSTR cmd, int show) {
     (void)prev; (void)cmd; (void)show;
     g_inst = inst;
-    g_ja = PRIMARYLANGID(GetUserDefaultUILanguage()) == LANG_JAPANESE;
+    pick_language();
 
     // One copy only. Opening Sawaruna again starts guarding (like the Mac version).
     HANDLE mutex = CreateMutexW(NULL, TRUE, L"Local\\SawarunaSingleInstance");

@@ -1,8 +1,10 @@
-# Sawaruna for Windows (test version 0.1)
+# Sawaruna for Windows (test version 0.2)
 
 [日本語は下にあります](#日本語)
 
 Lock your PC the moment a person touches it, while AI agents keep working.
+
+The app follows your Windows display language: English, Japanese and 23 more languages (Chinese Simplified and Traditional, Korean, French, German, Spanish, Portuguese, Italian, Dutch, Swedish, Danish, Norwegian, Finnish, Icelandic, Polish, Russian, Ukrainian, Turkish, Indonesian, Vietnamese, Thai, Hindi and Hebrew). Other languages fall back to English.
 
 ## Use
 
@@ -11,7 +13,7 @@ Lock your PC the moment a person touches it, while AI agents keep working.
 3. Keep your hands off for 3 seconds. When a sound plays and the icon changes, guarding has started.
 4. If anyone touches the mouse or keyboard, the PC locks. Sign in as usual. Guarding ends when the PC locks.
 
-This test version is not signed yet, so Windows may show "Windows protected your PC". Select **More info**, then **Run anyway**.
+This test version is not signed yet, so Windows may show "Windows protected your PC". Select **More info**, then **Run anyway**. See the [code signing policy](../README.md#code-signing-policy).
 
 No installation and no extra permission is needed. To remove it, quit Sawaruna from its menu and delete the file. Settings are stored in `HKEY_CURRENT_USER\Software\Sawaruna`.
 
@@ -46,6 +48,8 @@ GPL-3.0-or-later. "Sawaruna" and the Sawaruna logo are trademarks of Yoshiki Nak
 ## 日本語
 
 AI に作業を続けさせたまま、人が触った瞬間に PC をロックします。
+
+表示は Windows の表示言語に合わせます（日本語・英語ほか23言語。対応していない言語は英語）。
 
 ### 使い方
 

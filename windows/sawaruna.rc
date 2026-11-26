@@ -5,8 +5,8 @@
 4 ICON "tray_armed.ico"
 1 RT_MANIFEST "sawaruna.manifest"
 VS_VERSION_INFO VERSIONINFO
-FILEVERSION 0,1,0,0
-PRODUCTVERSION 0,1,0,0
+FILEVERSION 0,2,0,0
+PRODUCTVERSION 0,2,0,0
 FILEOS VOS_NT_WINDOWS32
 FILETYPE VFT_APP
 BEGIN
@@ -16,10 +16,10 @@ BEGIN
     BEGIN
       VALUE "CompanyName", "Yoshiki Nakamura"
       VALUE "FileDescription", "Sawaruna"
-      VALUE "FileVersion", "0.1.0.0"
+      VALUE "FileVersion", "0.2.0.0"
       VALUE "LegalCopyright", "Copyright (C) 2026 Yoshiki Nakamura. GPL-3.0-or-later."
       VALUE "ProductName", "Sawaruna for Windows"
-      VALUE "ProductVersion", "0.1"
+      VALUE "ProductVersion", "0.2"
       VALUE "OriginalFilename", "Sawaruna.exe"
     END
   END
