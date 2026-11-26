@@ -4,7 +4,7 @@ Last updated: November 2026 / 最終更新：2026年11月
 
 ## English
 
-Sawaruna does not collect, send, or share any personal data.
+The Sawaruna app does not collect, send, or share any personal data.
 
 ### Mac version
 
@@ -24,11 +24,20 @@ Taking photos of people without their consent may be restricted by law where you
 - **No camera.** The Windows version does not take photos.
 - **Settings** (whether the Ctrl+Alt+L shortcut is on, and whether the first-run guide was shown) are stored in the Windows registry for your user account (`HKEY_CURRENT_USER\Software\Sawaruna`). They contain no personal data.
 
+### Website (sawaruna.com)
+
+The app itself never connects to the internet. The website sawaruna.com uses Google Analytics 4 to count visits and app downloads, so we can see how people find Sawaruna.
+
+- Google Analytics uses cookies and collects data such as pages viewed, approximate location, device and browser. It does not give us your name or email address. We do not use it for ads.
+- Visitors in Europe are asked first. Nothing is stored until you choose "Allow".
+- You can turn it off at any time on the privacy page at https://sawaruna.com/privacy/, or with Google's opt-out add-on: https://tools.google.com/dlpage/gaoptout
+- How Google uses this data: https://policies.google.com/technologies/partner-sites
+
 Questions: open an issue at https://github.com/yoshn/sawaruna/issues
 
 ## 日本語
 
-Sawaruna は、個人情報を集めることも、送ることも、共有することもしません。
+Sawaruna のアプリは、個人情報を集めることも、送ることも、共有することもしません。
 
 ### Mac 版
 
@@ -47,5 +56,14 @@ Sawaruna は、個人情報を集めることも、送ることも、共有す�
 - **押したキーの内容を記録しません。** マウスとキーボードを見るのは見張り中だけで、その入力が実際の機器からか、ソフトウェアからかだけを確かめます。どのキーが押されたかは使わず、保存も送信もしません。
 - **カメラは使いません。** Windows 版は写真を撮りません。
 - **設定**（Ctrl+Alt+L のオン・オフと、最初の案内を表示したかどうか）は、ユーザーごとの Windows のレジストリ（`HKEY_CURRENT_USER\Software\Sawaruna`）に保存します。個人情報は含みません。
+
+### ウェブサイト（sawaruna.com）
+
+アプリ自体はインターネットに接続しません。ウェブサイト sawaruna.com では、Sawaruna がどのように見つけられているかを知るために、Google アナリティクス 4 で訪問数とアプリのダウンロード数を数えています。
+
+- Google アナリティクスは Cookie を使い、見たページ、おおよその地域、端末やブラウザの種類などを集めます。名前やメールアドレスはわかりません。広告には使いません。
+- ヨーロッパからの訪問者には先に確認します。「許可する」を選ぶまで何も保存しません。
+- いつでも https://sawaruna.com/privacy/ のページで止められます。Google のオプトアウト アドオン（https://tools.google.com/dlpage/gaoptout）でも止められます。
+- Google によるデータの使い方：https://policies.google.com/technologies/partner-sites?hl=ja
 
 お問い合わせ：https://github.com/yoshn/sawaruna/issues
