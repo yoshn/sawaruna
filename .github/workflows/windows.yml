@@ -1,0 +1,39 @@
+name: Build Windows
+
+on:
+  push:
+    branches: [main]
+    paths: ['windows/**', '.github/workflows/windows.yml']
+    tags: ['windows-v*']
+  pull_request:
+    paths: ['windows/**', '.github/workflows/windows.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install MinGW-w64
+        run: sudo apt-get update && sudo apt-get install -y mingw-w64 zip
+      - name: Check that l10n.h matches the translations
+        run: |
+          cd windows
+          cp l10n.h /tmp/l10n.h.committed
+          python3 l10n/gen_l10n.py
+          diff -u /tmp/l10n.h.committed l10n.h
+      - name: Build Sawaruna.exe
+        run: sh windows/build.sh
+      - name: Package
+        run: |
+          mkdir -p out
+          cp windows/Sawaruna.exe windows/README.md LICENSE out/
+          cd out && zip -X Sawaruna-Windows.zip Sawaruna.exe README.md LICENSE
+          sha256sum Sawaruna.exe Sawaruna-Windows.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Sawaruna-Windows
+          path: out/Sawaruna-Windows.zip
