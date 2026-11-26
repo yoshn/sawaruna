@@ -37,3 +37,55 @@ jobs:
         with:
           name: Sawaruna-Windows
           path: out/Sawaruna-Windows.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Sawaruna-exe
+          path: windows/Sawaruna.exe
+
+  msix:
+    # Microsoft Store package, made with the official Windows SDK tools
+    needs: build
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: Sawaruna-exe
+          path: exe
+      - name: Make the MSIX package
+        shell: pwsh
+        run: |
+          $sdk = Get-ChildItem 'C:\Program Files (x86)\Windows Kits\10\bin\10.*\x64' | Sort-Object Name -Descending | Select-Object -First 1
+          $env:PATH = "$($sdk.FullName);$env:PATH"
+          $ver = (Select-String -Path windows/sawaruna.c -Pattern 'APP_VERSION L"([0-9.]+)"').Matches[0].Groups[1].Value
+          foreach ($kind in 'store', 'test') {
+            $pyArgs = @('windows/msix/make_layout.py', 'exe/Sawaruna.exe', "layout-$kind", $ver)
+            if ($kind -eq 'test') { $pyArgs += '--test' }
+            python @args
+            if ($LASTEXITCODE) { exit 1 }
+            makepri createconfig /cf "priconfig-$kind.xml" /dq en-US /o
+            makepri new /pr "layout-$kind" /cf "priconfig-$kind.xml" /of "layout-$kind/resources.pri" /o
+            if ($LASTEXITCODE) { exit 1 }
+          }
+          makeappx pack /d layout-store /p Sawaruna.msix /o
+          if ($LASTEXITCODE) { exit 1 }
+          Compress-Archive -Path layout-test/* -DestinationPath Sawaruna-Store-test.zip
+          Get-FileHash Sawaruna.msix, Sawaruna-Store-test.zip -Algorithm SHA256 | Format-List
+      - name: Check that the package installs
+        shell: pwsh
+        run: |
+          $cert = New-SelfSignedCertificate -Type CodeSigningCert -Subject ((Select-Xml -Path layout-store/AppxManifest.xml -XPath '//*[local-name()="Identity"]').Node.Publisher) -CertStoreLocation Cert:\CurrentUser\My
+          $sdk = Get-ChildItem 'C:\Program Files (x86)\Windows Kits\10\bin\10.*\x64' | Sort-Object Name -Descending | Select-Object -First 1
+          Copy-Item Sawaruna.msix check.msix
+          & "$($sdk.FullName)\signtool.exe" sign /fd SHA256 /sha1 $cert.Thumbprint check.msix
+          Export-Certificate -Cert $cert -FilePath check.cer | Out-Null
+          Import-Certificate -FilePath check.cer -CertStoreLocation Cert:\LocalMachine\TrustedPeople | Out-Null
+          Add-AppxPackage check.msix
+          Get-AppxPackage *Sawaruna* | Format-List Name, Version, Status, InstallLocation
+          Remove-AppxPackage (Get-AppxPackage *Sawaruna*).PackageFullName
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Sawaruna-msix
+          path: |
+            Sawaruna.msix
+            Sawaruna-Store-test.zip
