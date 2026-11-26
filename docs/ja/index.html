@@ -39,7 +39,7 @@ h1 em{font-style:normal;background:linear-gradient(90deg,var(--cyan),var(--viole
 .ctas{display:flex;flex-wrap:wrap;gap:12px}
 .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;border-radius:12px;font-weight:600;font-size:16px;text-decoration:none;border:1px solid var(--line);color:var(--fg)}
 .btn.primary{background:var(--fg);color:var(--ink);border-color:var(--fg)}
-.btn.soon{cursor:default;opacity:.7}
+.sha{margin:14px 0 0;font-family:var(--mono);font-size:11px;color:var(--muted);opacity:.8;word-break:break-all}
 .btn small{font-weight:500;opacity:.65}
 .facts{display:flex;flex-wrap:wrap;gap:8px 18px;margin:26px 0 0;padding:0;list-style:none;color:var(--muted);font-size:14px}
 .facts li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--violet);margin-right:8px;vertical-align:2px}
@@ -99,8 +99,8 @@ footer p{margin:0;max-width:44em} footer nav{flex-wrap:wrap}
 <main>
 <div class="hero"><div class="wrap">
  <div><p class="eyebrow">AIエージェントを動かすMacに</p><h1>AIは<wbr>動かしたまま。<br><em>人が触ったら、<wbr>ロック。</em></h1><p class="lede">Sawaruna は、マウスとキーボードに本当に人の手が触れたかを見張ります。AIエージェントの操作はそのまま通し、人が触った瞬間に画面を覆い、1秒以内にMacをロックします。</p>
-  <div class="ctas"><span class="btn primary soon">Mac版をダウンロード <small>近日公開</small></span><a class="btn" href="https://github.com/yoshn/sawaruna" target="_blank" rel="noopener">GitHubでソースを見る</a></div>
-  <ul class="facts"><li>無料・オープンソース</li><li>macOS 13以降</li><li>Appleシリコン・Intel</li><li>25言語</li></ul></div>
+  <div class="ctas"><a class="btn primary" href="https://github.com/yoshn/sawaruna/releases/download/v2.0/Sawaruna-2.0.dmg">Mac版をダウンロード <small>v2.0・0.5 MB</small></a><a class="btn" href="https://github.com/yoshn/sawaruna" target="_blank" rel="noopener">GitHubでソースを見る</a></div>
+  <ul class="facts"><li>無料・オープンソース</li><li>macOS 13以降</li><li>Appleシリコン・Intel</li><li>25言語</li></ul><p class="sha">SHA-256 ce32d85ac0e4317ca508265363f48dd5ddc67747f929f9fe3b2820d439b26786</p></div>
  <figure class="screen" style="margin:0"><div class="bar"><span class="dots"><i></i><i></i><i></i></span><span class="status"><b></b>Sawaruna · 見張り中</span></div><ol class="log"><li class="pass"><span class="pid">pid 4127</span><span class="src">AIエージェント・マウス移動</span><span class="verdict">→ 通す</span></li><li class="pass"><span class="pid">pid 4127</span><span class="src">AIエージェント・キー入力</span><span class="verdict">→ 通す</span></li><li class="pass"><span class="pid">pid 3390</span><span class="src">自動化ツール・クリック</span><span class="verdict">→ 通す</span></li><li class="pass"><span class="pid">pid 4127</span><span class="src">AIエージェント・スクロール</span><span class="verdict">→ 通す</span></li><li class="hit"><span class="pid">pid 0</span><span class="src">キーボード本体・キー入力</span><span class="verdict">→ ロック</span></li></ol><figcaption class="caption">マウスやキーボードの操作には、送ったプログラムの番号が付いています。実物の機器からの操作は 0 番です。</figcaption></figure>
 </div></div>
 <section id="how"><div class="wrap"><h2>3ステップ。あとは席を離れるだけ</h2><p class="sub">エージェントを動かし、Sawaruna で見張りを始めて、席を立つ。毎回の設定はいりません。</p><ol class="steps"><li><h3>見張りを始める</h3><p>control + option + L を押すか、メニューバーの盾のアイコンを押します。</p></li><li><h3>手を離す</h3><p>3秒たつと「チン」と鳴って、見張りが始まります。</p></li><li><h3>だれかが触ると、ロック</h3><p>すぐに画面がロックされます。解除はいつものパスワードやTouch IDです。</p></li></ol></div></section>
