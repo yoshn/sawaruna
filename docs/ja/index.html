@@ -2,6 +2,16 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
+<script>
+/* Google Analytics 4 with Consent Mode v2. No ads. In Europe, nothing is stored until the visitor agrees. */
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',region:['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IE', 'IT', 'LV', 'LT', 'LU', 'MT', 'NL', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'IS', 'LI', 'NO', 'GB', 'CH']});
+gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'granted'});
+(function(){try{var c=localStorage.getItem('sw-consent');if(c==='granted'||c==='denied')gtag('consent','update',{analytics_storage:c});}catch(e){}})();
+gtag('js',new Date());gtag('config','G-HM2ZD88JFT');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-HM2ZD88JFT"></script>
+
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Sawaruna：人が触ったらMacをロック</title>
 
@@ -93,6 +103,14 @@ footer p{margin:0;max-width:44em} footer nav{flex-wrap:wrap}
 }
 @media (max-width:440px){ .log li{grid-template-columns:1fr auto} .log .pid{grid-column:1/-1} .log .src{white-space:normal} }
 </style>
+<style>
+.sw-consent{position:fixed;left:16px;right:16px;bottom:16px;z-index:50;max-width:560px;margin:0 auto;background:#151A31;border:1px solid #262C4A;border-radius:14px;padding:14px 16px;display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center;box-shadow:0 12px 40px rgba(0,0,0,.45);font-size:14px;line-height:1.5;color:#E9ECF7}
+.sw-consent p{margin:0;flex:1 1 260px}
+.sw-consent a{color:#4FD1FF}
+.sw-consent .b{display:flex;gap:8px}
+.sw-consent button{font:inherit;font-weight:600;border-radius:10px;padding:8px 14px;cursor:pointer;border:1px solid #262C4A;background:transparent;color:#E9ECF7}
+.sw-consent button.y{background:linear-gradient(90deg,#4FD1FF,#8C5CF5);border:0;color:#0E1122}
+</style>
 </head>
 <body>
 <header><div class="wrap"><a class="brand" href="/ja/"><svg class="mark" viewBox="108 24 296 480" aria-hidden="true"><path d="M339.4 133.1A92 92 0 1 0 203.2 247.4" stroke="var(--cyan)"/><path d="M308.8 280.6A92 92 0 1 1 172.6 394.9" stroke="var(--violet)"/></svg>Sawaruna</a><nav aria-label="Main"><a class="opt" href="#how">使い方</a><a class="opt" href="#privacy">プライバシー</a><a class="opt" href="#faq">よくある質問</a><a class="" href="https://github.com/yoshn/sawaruna" target="_blank" rel="noopener">GitHub</a><a class="" href="/" lang="en" hreflang="en">English</a></nav></div></header>
@@ -108,6 +126,29 @@ footer p{margin:0;max-width:44em} footer nav{flex-wrap:wrap}
 <section id="privacy"><div class="wrap split"><div><h2>しないこと</h2><ul class="list"><li><svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><div><b>インターネットに接続しない</b><span>通信のコードを含んでいません。Macの外には何も出ません。</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><div><b>キー入力を記録しない</b><span>押したキーがどれかは使わず、記録もしません。</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><div><b>見張り中しか見ない</b><span>見張りを始めてから（手を離して待つ3秒を含みます）ロックするまでです。待機中は何も見ていません。</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="var(--cyan)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg><div><b>写真はあなたの手元だけに</b><span>任意で、最初はオフです。触られた瞬間にMacのカメラで3枚撮り、このMacの中にだけ保存します。</span></div></li></ul></div><div class="limits"><h2>できないこと</h2><ul class="list"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg><div><b>画面を隠すこと</b><span>近くの人から画面は見えたままです。</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg><div><b>リモート操作を止めること</b><span>画面共有などの操作はエージェントと同じ扱いになり、ロックされません。</span></div></li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 12h12"/></svg><div><b>通常のロックの代わりになること</b><span>本当に大事なものを守るときは、<span style="white-space:nowrap">control + command + Q</span> を押してください。</span></div></li></ul></div></div></section>
 <section id="faq"><div class="wrap"><h2>よくある質問</h2><dl><dt>無料ですか？</dt><dd>はい。GPL v3 以降のライセンスで公開している、無料のオープンソースソフトです。</dd><dt>どのエージェントで使えますか？</dt><dd>マウスを動かしたり文字を打ったりする操作型のエージェントなど、ソフトの操作としてMacを動かすものに対応しています。ターミナルで動くコーディング用のエージェントのように裏側だけで動くものは、そのまま作業を続けます。仮想のキーボード機器を通して入力するツールは人の操作と同じに見えるため、ロックされます。</dd><dt>ロックできなかったら？</dt><dd>Sawaruna は、本当にロックされたかを確かめます。できていなければ画面を覆ったまま、ディスプレイを消します。ロック画面の設定が「すぐにパスワードを要求」なら、これでロックされます。それでもだめなら、ロックできていないことを知らせて止まります。</dd><dt>なぜ「入力監視」の許可がいるのですか？</dt><dd>アプリがマウスやキーボードの動きを知るには、この許可が必要です。Sawaruna は見張り中だけ、触られたかどうかを知るためにだけ使います。</dd><dt>Windows でも使えますか？</dt><dd>Windows 10・11 用のベータ版があります。Windows がソフトの作った操作に付ける印を使って同じように見分け、Windows 標準のロック機能でロックします。できないことは GitHub の windows/README.md を見てください。</dd><dt>コードを確かめられますか？</dt><dd>アプリ全体が GitHub 上の1つの Swift ファイルです。付属のインストール用スクリプトで、自分で作ることもできます。</dd></dl></div></section>
 </main>
-<footer><div class="wrap"><p>© 2026 Yoshiki Nakamura. Sawaruna の名前とロゴは中村圭希（Yoshiki Nakamura）の商標です。ソフトウェアは GPL-3.0-or-later で提供しています。このサイトは Cookie も解析ツールも使っていません。</p><nav aria-label="Footer"><a href="https://github.com/yoshn/sawaruna" target="_blank" rel="noopener">GitHub</a><a href="https://github.com/yoshn/sawaruna/blob/main/PRIVACY.md" target="_blank" rel="noopener">プライバシーポリシー</a><a href="https://github.com/yoshn/sawaruna/blob/main/SECURITY.ja.md" target="_blank" rel="noopener">セキュリティ</a><a href="/" lang="en" hreflang="en">English</a></nav></div></footer>
+<footer><div class="wrap"><p>© 2026 Yoshiki Nakamura. Sawaruna の名前とロゴは中村圭希（Yoshiki Nakamura）の商標です。ソフトウェアは GPL-3.0-or-later で提供しています。このサイトは訪問数を知るために Google アナリティクスを使っています（広告なし。ヨーロッパでは同意した場合のみ）。</p><nav aria-label="Footer"><a href="https://github.com/yoshn/sawaruna" target="_blank" rel="noopener">GitHub</a><a href="/privacy/">プライバシーポリシー</a><a href="https://github.com/yoshn/sawaruna/blob/main/SECURITY.ja.md" target="_blank" rel="noopener">セキュリティ</a><a href="/" lang="en" hreflang="en">English</a></nav></div></footer>
+<script>
+(function(){
+  function save(v){try{localStorage.setItem('sw-consent',v);}catch(e){}gtag('consent','update',{analytics_storage:v});}
+  window.swSetConsent=save;
+  /* Ask only visitors in Europe (where consent is required); others can opt out on the privacy page. */
+  var stored=null;try{stored=localStorage.getItem('sw-consent');}catch(e){}
+  var tz='';try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';}catch(e){}
+  var europe=/^Europe\//.test(tz)||tz==='Atlantic/Reykjavik'||tz==='Atlantic/Canary'||tz==='Atlantic/Madeira'||tz==='Atlantic/Azores';
+  if(!stored&&europe){
+    var d=document.createElement('div');d.className='sw-consent';d.setAttribute('role','dialog');d.setAttribute('aria-label','Analytics');
+    d.innerHTML='<p>サイトの利用状況を知るために Google アナリティクスを使っています。広告はありません。<a href="/privacy/#website">詳しく</a></p><div class="b"><button type="button" class="n">許可しない</button><button type="button" class="y">許可する</button></div>';
+    d.querySelector('.y').onclick=function(){save('granted');d.remove();};
+    d.querySelector('.n').onclick=function(){save('denied');d.remove();};
+    document.body.appendChild(d);
+  }
+  /* Count app downloads */
+  document.addEventListener('click',function(e){
+    var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.href;
+    if(/\/releases\/download\//.test(h)){gtag('event','download_app',{platform:/\.dmg$/.test(h)?'mac':'windows',file_name:h.split('/').pop(),link_location:a.closest('section')&&a.closest('section').id||''});}
+    else if(/github\.com\/yoshn\/sawaruna/.test(h)){gtag('event','click_github',{link_url:h});}
+  });
+})();
+</script>
 </body>
 </html>
