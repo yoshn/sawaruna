@@ -2,7 +2,9 @@
 
 # Sawaruna
 
-**AIに作業を続けさせたまま、人が触った瞬間にMacをロックします。**
+**AIに作業を続けさせたまま、人が触った瞬間に Mac や Windows パソコンをロックします。**
+
+ダウンロード：[sawaruna.com](https://sawaruna.com/ja/)。このページは Mac 版の説明です。Windows 版（ベータ）は [windows/README.md](windows/README.md) をご覧ください。
 
 [English](README.md)
 

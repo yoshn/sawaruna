@@ -2,7 +2,9 @@
 
 # Sawaruna
 
-**Lock your Mac the moment a human touches it, while AI agents keep working.**
+**Lock your Mac or Windows PC the moment a human touches it, while AI agents keep working.**
+
+Download: [sawaruna.com](https://sawaruna.com) · This page describes the Mac version. For Windows (beta), see [windows/README.md](windows/README.md).
 
 [日本語](README.ja.md)
 
