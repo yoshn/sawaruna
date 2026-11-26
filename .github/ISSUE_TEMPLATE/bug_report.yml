@@ -1,0 +1,38 @@
+name: Bug report
+description: Something does not work as expected (日本語でも大丈夫です)
+labels: [bug]
+body:
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Mac
+        - Windows
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: OS version
+      placeholder: macOS 15.1 / Windows 11 24H2
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Sawaruna version
+      placeholder: "2.0 / Windows 0.2 beta"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        Security problem? Please do not report it here. Use [private vulnerability reporting](https://github.com/yoshn/sawaruna/security/advisories/new).
